@@ -1,19 +1,15 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
 
     private String name;
     private int id;
-    private List<Card>playerCards;
+    public List<Card>playerCards = new ArrayList<>();
 
     //Setters
-    public void setPlayerCards(List<Card> playerCards) {
-        this.playerCards = playerCards;
-    }
-
-    //Getters
-    public List<Card> getPlayerCards() {
-        return playerCards;
+    public void setPlayerCards(Card card) {
+        this.playerCards.add(card);
     }
 
     public String getName() {
@@ -24,6 +20,17 @@ public class Player {
         return id;
     }
 
+    public String getPlayerCards() {
+        for (Card card : playerCards){
+            //return card.getRank() + " of " + card.getSuit();
+            System.out.println(card.getRank() + " of " + card.getSuit());
+        }
+        return null;
+    }
+
+    public List<Card> getPlayerCardsList(){
+        return playerCards;
+    }
 
     /**
      * Constructor for Player
@@ -33,6 +40,7 @@ public class Player {
     public Player(String name, int id) {
         this.name = name;
         this.id = id;
+
     }
 
     //Player toString

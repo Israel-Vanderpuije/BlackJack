@@ -28,4 +28,5 @@ public class Card {
                 ", rank=" + rank +
                 '}';
     }
+
 }
